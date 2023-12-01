@@ -17,3 +17,6 @@ def test_GetListWithCommaDelimiterAsStrings():
 
 def test_GetListWithNoDelimiterAsStrings():
     assert Utilities.InputParser.ExtractListWithStringValues("TestData/nodelimiterlist.txt", "") == ["1", "2", "3", "4", "5", "6"]
+
+def test_Get2dIntArrayWithSpaceDelimiter():
+    assert Utilities.InputParser.Extract2DArrayWithIntValues("2darrayspacedelimiter.txt", " ") == [[1,2,3,4][5,6,7,8]]
