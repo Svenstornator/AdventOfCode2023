@@ -5,14 +5,20 @@ def ExtractListWithIntValues(relativeFileLocation, delimiter):
 def ExtractListWithStringValues(relativeFileLocation, delimiter):
     inputFile = open(relativeFileLocation, "r")
     inputAsString = inputFile.readline()
-    return inputAsString.split(delimiter) if delimiter != "" else list(inputAsString)
+    return __SplitLineWithDelimiter(inputAsString, delimiter)
 
 def Extract2DArrayWithIntValues(relativeFileLocation, delimiter):
-    inputFile = open(relativeFileLocation, "r")
-    inputLines = inputFile.readlines()
+    inputLines = ExtractListOfStringsFromLinesOfStrings(relativeFileLocation)
     returnValue = []
     for inputLine in inputLines:
-        inputLine = inputLine.strip()
-        lineAsListOfStrings = inputLine.split(delimiter) if delimiter != "" else list(inputLine)
+        lineAsListOfStrings = __SplitLineWithDelimiter(inputLine, delimiter)
         returnValue.append([int(x) for x in lineAsListOfStrings])
     return returnValue
+
+def ExtractListOfStringsFromLinesOfStrings(relativeFileLocation):
+    inputFile = open(relativeFileLocation, "r")
+    inputLines = inputFile.readlines()
+    return [line.strip() for line in inputLines]
+
+def __SplitLineWithDelimiter(string, delimiter):
+    return string.split(delimiter) if delimiter != "" else list(string)

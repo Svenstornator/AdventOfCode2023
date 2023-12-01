@@ -31,4 +31,4 @@ def test_Get2dIntArrayWithNoDelimiter():
     assert Utilities.InputParser.Extract2DArrayWithIntValues("TestData/2darraynodelimitertrailingline","") == [[1,2,3,4,5],[6,7,8,9,0]]
 
 def test_GetListOfStringsWithNewlineDelimiter():
-    assert Utilities.InputParser.ExtractListWithStringValues("TestData/listofstringswithnewlinedelimiter", "\n") == ["goodnight", "world", "sleep", "well"]
+    assert Utilities.InputParser.ExtractListOfStringsFromLinesOfStrings("TestData/listofstringswithnewlinedelimiter") == ["goodnight", "world", "sleep", "well"]
