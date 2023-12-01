@@ -9,7 +9,7 @@ def test_GetListWithCommaDelimiter():
 def test_GetListWithSpaceDelimiter():
     assert Utilities.InputParser.ExtractListWithIntValues("TestData/spacedelimiter.txt", " ") == [1, 2, 3, 4]
 
-def test_GetListWithSpaceDelimiterAsStrings():
+def test_GetListWithSpaceDelimiterAsChars():
     assert Utilities.InputParser.ExtractListWithStringValues("TestData/spacedelimiter.txt", " ") == ["1", "2", "3", "4"]
 
 def test_GetListWithCommaDelimiterAsStrings():
@@ -17,6 +17,9 @@ def test_GetListWithCommaDelimiterAsStrings():
 
 def test_GetListWithNoDelimiterAsStrings():
     assert Utilities.InputParser.ExtractListWithStringValues("TestData/nodelimiterlist.txt", "") == ["1", "2", "3", "4", "5", "6"]
+
+def test_GetListWithSpaceDelimiterAsStrings():
+    assert Utilities.InputParser.ExtractListWithStringValues("TestData/listofstringswithspacedelimiter", " ") == ["hello", "world", "how", "are", "you"]
 
 def test_Get2dIntArrayWithSpaceDelimiter():
     assert Utilities.InputParser.Extract2DArrayWithIntValues("TestData/2darrayspacedelimiter", " ") == [[1,2,3,4],[5,6,7,8]]
@@ -26,3 +29,6 @@ def test_Get2dIntArrayWithCommaDelimiter():
 
 def test_Get2dIntArrayWithNoDelimiter():
     assert Utilities.InputParser.Extract2DArrayWithIntValues("TestData/2darraynodelimitertrailingline","") == [[1,2,3,4,5],[6,7,8,9,0]]
+
+def test_GetListOfStringsWithNewlineDelimiter():
+    assert Utilities.InputParser.ExtractListWithStringValues("TestData/listofstringswithnewlinedelimiter", "\n") == ["goodnight", "world", "sleep", "well"]
