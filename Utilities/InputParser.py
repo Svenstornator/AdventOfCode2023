@@ -12,6 +12,7 @@ def Extract2DArrayWithIntValues(relativeFileLocation, delimiter):
     inputLines = inputFile.readlines()
     returnValue = []
     for inputLine in inputLines:
+        inputLine = inputLine.strip()
         lineAsListOfStrings = inputLine.split(delimiter) if delimiter != "" else list(inputLine)
         returnValue.append([int(x) for x in lineAsListOfStrings])
     return returnValue

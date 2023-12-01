@@ -20,3 +20,6 @@ def test_GetListWithNoDelimiterAsStrings():
 
 def test_Get2dIntArrayWithSpaceDelimiter():
     assert Utilities.InputParser.Extract2DArrayWithIntValues("TestData/2darrayspacedelimiter", " ") == [[1,2,3,4],[5,6,7,8]]
+
+def test_Get2dIntArrayWithCommaDelimiter():
+    assert Utilities.InputParser.Extract2DArrayWithIntValues("TestData/2darraycommadelimiter", ",") == [[1,2,3],[4,5,6]]
