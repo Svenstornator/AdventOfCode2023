@@ -40,6 +40,22 @@ def Extract2DArrayWithIntValues(relativeFileLocation, delimiter):
         returnValue.append([int(x) for x in lineAsListOfStrings])
     return returnValue
 
+def Extract2DArrayWithCharValues(relativeFileLocation, delimiter):
+    """
+    Takes an input of a multiple rows of number separated by a delimiter
+    and returns it as a list of lists of ints
+    :param relativeFileLocation: the name of the relative path to the file to read from as a string
+    :param delimiter: the means by which the values are separated, such as commas, spaces or an empty string.
+            Note: This will not accept newline characters, as newline characters separate the lists of lists
+    :return: returns the numbers as a list of strings or chars
+    """
+    inputLines = ExtractListOfStringsFromLinesOfStrings(relativeFileLocation)
+    returnValue = []
+    for inputLine in inputLines:
+        lineAsListOfStrings = __SplitLineWithDelimiter(inputLine, delimiter)
+        returnValue.append(lineAsListOfStrings)
+    return returnValue
+
 
 def ExtractListOfStringsFromLinesOfStrings(relativeFileLocation):
     """
